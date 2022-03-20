@@ -10,8 +10,8 @@
         state: present
 
     - name: Copy webcontent (index.html) to webservers.
-      copy:
-        src: index.html
+      template:
+        src: index.html.j2
         dest: /var/www/html/index.html
 
     - name: Start apache webserver
