@@ -5,5 +5,7 @@
   <BODY>
     <H1>Welcome to Rathinam Trainers</H1>
     <h2>update - v1.2</h2>
+    <h2>hostname: {{ ansible_facts.fqdn }} </h2>
+    <h2>IP address: {{ ansible_facts.default_ipv4.address }} </h2>
   </BODY>
 </HTML>
