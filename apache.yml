@@ -1,0 +1,26 @@
+---
+- name: Install and start Apache webserver.
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install apache webserver package.
+      yum:
+        name: httpd
+        state: present
+
+    - name: Copy webcontent (index.html) to webservers.
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+
+    - name: Start apache webserver
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Open HTTP service in firewall.
+      firewalld:
+        service: http
+        state: enabled
