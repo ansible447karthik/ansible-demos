@@ -1,6 +1,6 @@
 ---
 - name: Install and start Apache webserver.
-  hosts: webservers
+  hosts: all
   become: true
 
   tasks:
