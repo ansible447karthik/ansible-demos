@@ -8,12 +8,7 @@
       yum:
         name: httpd
         state: present
-
-    - name: Copy webcontent (index.html) to webservers.
-      copy:
-        src: index.html
-        dest: /var/www/html/index.html
-
+        
     - name: Start apache webserver
       service:
         name: httpd
