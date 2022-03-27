@@ -2,7 +2,7 @@
 - name: Install and start Apache webserver.
   hosts: all
   become: true
-  gather_facts: no
+  gather_facts: yes
 
   tasks:
     - name: Install apache webserver package.
