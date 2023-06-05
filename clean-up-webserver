@@ -1,0 +1,17 @@
+---
+- name: Un-Install webserver 
+  hosts: all
+  become: true
+  gather_facts: no
+
+  tasks:
+    - name: UnInstall apache webserver package.
+      yum:
+        name: httpd
+        state: absent
+        autoremove: true
+
+    - name: close HTTP service in firewall.
+      firewalld:
+        service: http
+        state: disabled
